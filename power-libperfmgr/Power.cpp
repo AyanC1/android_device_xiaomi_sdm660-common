@@ -49,10 +49,6 @@
 #define TAP_TO_WAKE_NODE4 "/proc/touchpanel/wake_gesture"
 #endif
 
-#ifndef TAP_TO_WAKE_NODE5
-#define TAP_TO_WAKE_NODE5 "/proc/tp_gesture"
-#endif
-
 extern struct stat_pair rpm_stat_map[];
 
 namespace android {
@@ -245,7 +241,6 @@ Return<void> Power::setFeature(Feature feature, bool activate)  {
             ::android::base::WriteStringToFile(activate ? "1" : "0", TAP_TO_WAKE_NODE2, true);
             ::android::base::WriteStringToFile(activate ? "1" : "0", TAP_TO_WAKE_NODE3, true);
             ::android::base::WriteStringToFile(activate ? "1" : "0", TAP_TO_WAKE_NODE4, true);
-            ::android::base::WriteStringToFile(activate ? "1" : "0", TAP_TO_WAKE_NODE5, true);
             break;
 #endif
         default:
